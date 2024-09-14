@@ -1,0 +1,77 @@
+/* Ensure the background image covers the entire page */
+body {
+    margin: 0;
+    padding: 0;
+    background: url('background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+/* OPD Symbol styling */
+.opd-symbol {
+    position: absolute;
+    top: 10px;  /* Margin from the top to ensure it’s clear of other elements */
+    left: 10px; /* Margin from the left edge */
+    z-index: 10; /* Ensure it is on top of other elements */
+    background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background for better contrast */
+    border-radius: 5px; /* Round corners for better aesthetics */
+    padding: 5px; /* Space around the symbol */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8); /* Shadow for added contrast */
+}
+
+.opd-symbol img {
+    width: 50px;  /* Size of the OPD symbol */
+    height: auto; /* Maintain aspect ratio */
+    filter: brightness(0.9) contrast(1.2); /* Slightly adjusted for better visibility */
+}
+
+/* Style for top navigation bar */
+.top-nav {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end; /* Align links to the right */
+    z-index: 5; /* Ensure the navigation bar is above other elements */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+/* Style for login options container */
+.login-options-container {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center;
+    flex-direction: column; /* Stack buttons vertically */
+    position: absolute;
+    right: 20%; /* Shift the container towards the center from the right edge */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+}
+
+/* Style for login buttons */
+.login-options-container button {
+    font-size: 24px; /* Larger button text */
+    padding: 20px 40px; /* Increase button size */
+    margin: 20px 0; /* Vertical spacing between buttons */
+    border: none;
+    border-radius: 10px;
+    background-color: #0083b3;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 300px; /* Button width */
+}
+
+/* Hover effect for buttons */
+.login-options-container button:hover {
+    background-color: #006b8e;
+}

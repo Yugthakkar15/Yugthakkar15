@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link href="hospital.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="form-section">
+      <span class="logo"><i class="bi bi-book"></i></span>
+      <h2>Join Us Now</h2>
+      <span class="sub-heading">Join over 1000 people learning with us.</span>
+      <div class="btns">
+        <button id="google-btn" class="btn-secondary">
+          <i class="bi bi-google"></i> Sign up with Google
+        </button>
+        <button class="btn-secondary">
+          <i class="bi bi-facebook"></i> Sign up with Facebook
+        </button>
+      </div>
+      <form id="signup-form">
+        <label for="name">Hospital Name</label>
+        <input class="form-control" type="text" id="name" required />
+        <label for="email">Email</label>
+        <input class="form-control" type="email" id="email" required />
+        <label for="password">Password</label>
+        <input class="form-control" type="password" id="password" required />
+        <div class="input-group">
+          <input type="checkbox" id="checkbox" />
+          <label for="checkbox">I agree to the <a href="#">terms and conditions</a></label>
+        </div>
+        <button id="submit" class="btn btn-primary mt d-block text-center">Sign Up</button>
+      </form>
+      <div class="footer-group">
+        <span>Already Registered? <a href="#">Sign In</a></span>
+        <a href="#">Forgot password?</a>
+      </div>
+    </div>
+    <div class="hero-section">
+      <h2>Click the button to reserve the bed</h2>
+      <img src="newlogo.jpg" alt="" />
+    </div>
+    <script type="module" src="hospital.js"></script>
+  </body>
+</html>

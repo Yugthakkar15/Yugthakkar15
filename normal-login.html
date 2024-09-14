@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal Login - Patient Details</title>
+    <style>
+       /* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav {
+    background-color: #333;
+    padding: 10px 20px;
+    text-align: right;
+}
+
+.top-nav .nav-links a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.top-nav .nav-links a:hover {
+    background-color: #575757;
+    color: white;
+}
+
+/* Form Container */
+.patient-details-container,
+.health-issues-container,
+.bed-selection-container,
+.submit-container {
+    background-color: white;
+    margin: 30px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 100px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Bed Selection Section */
+.bed-selection-container {
+    text-align: center;
+}
+
+.beds-layout {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px; /* Increased gap between beds */
+    justify-items: center;
+    padding: 20px; /* Padding around the grid */
+}
+
+.bed {
+    width: 60px; /* Decreased width */
+    height: 30px; /* Decreased height */
+    background-color: #28a745;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14px; /* Adjust font size for smaller beds */
+}
+
+.bed:before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 10px;
+    width: 50px;
+    height: 8px;
+    background-color: #28a745;
+    border-radius: 4px;
+}
+
+.bed:after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 10px;
+    width: 50px;
+    height: 8px;
+    background-color: #28a745;
+    border-radius: 4px;
+}
+
+.bed.occupied {
+    background-color: #dc3545;
+    cursor: not-allowed;
+}
+
+.bed.selected {
+    background-color: #007bff;
+}
+
+.bed.selected:before {
+    background-color: #007bff;
+}
+
+.bed.selected:after {
+    background-color: #007bff;
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+    .patient-details-container,
+    .health-issues-container,
+    .bed-selection-container,
+    .submit-container {
+        width: 95%;
+    }
+}
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Top Navigation Bar with Help and About Us -->
+    <div class="top-nav">
+        <div class="nav-links">
+            <a href="help.html">Help</a>
+            <a href="about-us.html">About Us</a>
+        </div>
+    </div>
+
+    <!-- Patient Details Form -->
+    <div class="patient-details-container">
+        <h2>Patient Details</h2>
+        <form action="submit-patient-details.html" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="dob">Date of Birth (DOB):</label><br>
+            <input type="date" id="dob" name="dob" required><br><br>
+
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age" required><br><br>
+
+            <label for="blood-group">Blood Group:</label><br>
+            <input type="text" id="blood-group" name="blood-group" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="gender">Gender:</label><br>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select><br><br>
+
+            <label for="contact">Contact No:</label><br>
+            <input type="tel" id="contact" name="contact" required><br><br>
+
+            <label for="address">Location Address:</label><br>
+            <textarea id="address" name="address" required></textarea><br><br>
+        </form>
+    </div>
+
+    <!-- Health Issues Section -->
+    <div class="health-issues-container">
+        <h2>Health Issues</h2>
+        <form>
+            <label for="health-issue">Select Health Issue:</label><br>
+            <select id="health-issue" name="health-issue" required>
+                <option value="orthopedic">Orthopedic</option>
+                <option value="radiology">Radiology</option>
+                <option value="dermatology">Dermatology</option>
+                <option value="cardiology">Cardiology</option>
+            </select><br><br>
+
+            <!-- Slot Booking Section -->
+            <h3>Book a Slot</h3>
+            <label for="slot-time">Select Slot Time:</label><br>
+            <select id="slot-time" name="slot-time" required>
+                <option value="9am-10am">9:00 AM - 10:00 AM</option>
+                <option value="10am-11am">10:00 AM - 11:00 AM</option>
+                <option value="11am-12pm">11:00 AM - 12:00 PM</option>
+                <option value="12pm-1pm">12:00 PM - 1:00 PM</option>
+                <option value="1pm-2pm">1:00 PM - 2:00 PM</option>
+                <option value="2pm-3pm">2:00 PM - 3:00 PM</option>
+                <option value="3pm-4pm">3:00 PM - 4:00 PM</option>
+            </select><br><br>
+        </form>
+    </div>
+
+    <!-- Bed Selection Section -->
+    <div class="bed-selection-container">
+        <h2>Select a Bed</h2>
+        <div class="beds-layout">
+            <div class="bed">1</div>
+            <div class="bed occupied">2</div>
+            <div class="bed">3</div>
+            <div class="bed">4</div>
+            <div class="bed">5</div>
+            <div class="bed">6</div>
+            <div class="bed">7</div>
+            <div class="bed occupied">8</div>
+            <div class="bed">9</div>
+            <div class="bed">10</div>
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="submit-container">
+        <button type="submit">Submit</button>
+    </div>
+
+    <script>
+        // JavaScript to handle bed selection
+        const beds = document.querySelectorAll('.bed');
+        beds.forEach(bed => {
+            bed.addEventListener('click', () => {
+                if (!bed.classList.contains('occupied')) {
+                    beds.forEach(b => b.classList.remove('selected'));
+                    bed.classList.add('selected');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

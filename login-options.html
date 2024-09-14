@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="stylesoption.css">
+    <style>
+        /* Additional styles for this page */
+        .login-container {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .login-option {
+            margin: 20px;
+            padding: 20px;
+            display: inline-block;
+            width: 200px;
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .login-option:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Container with Normal and Emergency Login -->
+    <div class="login-container">
+        <h1>Select Login Type</h1>
+
+        <!-- Normal Login -->
+        <div class="login-option" onclick="window.location.href='normal-login.html'">
+            Normal Login
+        </div>
+
+        <!-- Emergency Login -->
+        <div class="login-option" onclick="window.location.href='emergency-login.html'">
+            Emergency Login
+        </div>
+    </div>
+</body>
+
+</html>

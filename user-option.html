@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Options</title>
+    <link rel="stylesheet" href="stylesoption.css">
+</head>
+
+<body>
+    <!-- Top Navigation Bar with Help and About Us -->
+    <div class="top-nav">
+        <div class="nav-links">
+            <a href="help.html">Help</a>
+            <a href="about-us.html">About Us</a>
+        </div>
+    </div>
+
+    <!-- User Options Section -->
+    <div class="user-options-container">
+        <h2>Please Select an Option</h2>
+
+        <!-- Section for Normal Login -->
+        <div class="option-section">
+            <h3>Normal Login</h3>
+            <p>Proceed with normal case.</p>
+            <button onclick="window.location.href='normal-login.html'">Normal Login</button>
+            <!-- OPD Bed Availability for Normal Login -->
+            <div class="availability">
+                <p><strong>OPD Bed Availability:</strong> 15 beds available</p>
+            </div>
+        </div>
+
+        <!-- Section for Emergency Login -->
+        <div class="option-section">
+            <h3>Emergency Login</h3>
+            <p>In case of emergency.</p>
+            <button onclick="window.location.href='emergency-login.html'">Emergency Login</button>
+            <!-- OPD Bed Availability for Emergency Login -->
+            <div class="availability">
+                <p><strong>OPD Bed Availability:</strong> 5 beds available</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

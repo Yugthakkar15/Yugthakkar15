@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discharge Patient's Detail</title>
+    <style> 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav {
+    background-color: #333;
+    padding: 10px 20px;
+    text-align: right;
+}
+
+.top-nav .nav-links a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.top-nav .nav-links a:hover {
+    background-color: #575757;
+    color: white;
+}
+
+/* Form Container */
+.discharge-patients-detail-container,
+.submit-container {
+    background-color: white;
+    margin: 30px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="number"],
+input[type="text"],
+input[type="gender"],
+input[type="number"],
+input[type="text"],
+input[type="date"],
+input[type="date"],
+textarea,
+select {
+    width: 50%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 100px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+    .discharge-Patients-Detail-container{
+        width: 50%;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Top Navigation Bar with Help and About Us -->
+    <div class="top-nav">
+        <div class="nav-links">
+            <a href="help.html">Help</a>
+            <a href="about-us.html">About Us</a>
+        </div>
+    </div>
+
+    <!-- Patient Details Form -->
+    <div class="patient-details-container">
+        <h2>Discharge Patient Details</h2>
+        <form action="submit-discharge-patients-detail.html" method="post">
+            <label for="name">Patient's Id:</label><br>
+            <input type="number" id="name" name="Id" required><br><br>
+
+            <label for="blood-group">Patient's Name:</label><br>
+            <input type="text" id="Patient's Name" name="Patient's Name" required><br><br>
+
+            <label for="gender">Gender:</label><br>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select><br><br>
+
+            <label for="contact">Contact No:</label><br>
+            <input type="tel" id="contact" name="contact" required><br><br>
+
+            <label for="address">Address:</label><br>
+            <textarea id="adderss" name="address" required></textarea><br><br>
+
+            <label for="name">Admission Date:</label><br>
+            <input type="date" id="Admission Date" name="Admission Date" required><br><br>
+
+            <label for="name">Discharge Date:</label><br>
+            <input type="date" id="Discharge Date" name="Discharge Date" required><br><br>
+        </form>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="submit-container">
+        <button type="submit">Submit</button>
+    </div>
+</body>
+</html>
